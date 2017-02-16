@@ -348,50 +348,6 @@ Word16 extract_h(Word32 L_var1)
 
 /*___________________________________________________________________________
  |                                                                           |
- |   Function Name : round                                                   |
- |                                                                           |
- |   Purpose :                                                               |
- |                                                                           |
- |   Round the lower 16 bits of the 32 bit input number into its MS 16 bits  |
- |   with saturation. Shift the resulting bits right by 16 and return the 16 |
- |   bit number:                                                             |
- |               round(L_var1) = extract_h(L_add(L_var1,32768))              |
- |                                                                           |
- |   Complexity weight : 1                                                   |
- |                                                                           |
- |   Inputs :                                                                |
- |                                                                           |
- |    L_var1                                                                 |
- |             32 bit long signed integer (Word32 ) whose value falls in the |
- |             range : 0x8000 0000 <= L_var1 <= 0x7fff ffff.                 |
- |                                                                           |
- |   Outputs :                                                               |
- |                                                                           |
- |    none                                                                   |
- |                                                                           |
- |   Return Value :                                                          |
- |                                                                           |
- |    var_out                                                                |
- |             16 bit short signed integer (Word16) whose value falls in the |
- |             range : 0xffff 8000 <= var_out <= 0x0000 7fff.                |
- |___________________________________________________________________________|
-*/
-
-Word16 round(Word32 L_var1)
-  {
-   Word16 var_out;
-   Word32 L_arrondi;
-
-   L_arrondi = L_add(L_var1, (Word32)0x00008000);
-   var_out = extract_h(L_arrondi);
-   return(var_out);
-  }
-
-
-
-
-/*___________________________________________________________________________
- |                                                                           |
  |   Function Name : L_macNs                                                 |
  |                                                                           |
  |   Purpose :                                                               |
