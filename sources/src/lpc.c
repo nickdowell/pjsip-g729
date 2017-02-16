@@ -640,7 +640,7 @@ static Word16 Chebps_11(Word16 x, Word16 f[], Word16 n)
 
   /* Q24 to Q30 with saturation */
   /* Result in Q14              */
-  if ((UWord32)(t0 - 0xfe000000L) < 0x01ffffffL -  0xfe000000L)
+  if ((UWord32)(t0 - 0xfe000000L) < 0x03ffffffL)
     cheb = (Word16)(t0 >> 10);
   else
     cheb = t0 > (Word32) 0x01ffffffL ? MAX_16 : MIN_16;
@@ -695,7 +695,7 @@ static Word16 Chebps_10(Word16 x, Word16 f[], Word16 n)
 
   /* Q23 to Q30 with saturation */
   /* Result in Q14              */
-  if ((UWord32)(t0 - 0xff000000L) < 0x00ffffffL -  0xff000000L)
+  if ((UWord32)(t0 - 0xff000000L) < 0x01ffffffL)
     cheb = (Word16)(t0 >> 9);
   else
     cheb = t0 > (Word32) 0x00ffffffL ? MAX_16 : MIN_16;
