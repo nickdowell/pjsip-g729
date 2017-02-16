@@ -35,6 +35,9 @@ typedef unsigned char  UWord8;
 typedef unsigned short UWord16;
 typedef unsigned int   UWord32;
 
+#if _MSC_VER
+#define inline __inline
+#endif
 
 /* ------------------------------------------------------------------
  * Copyright (C) 1998-2009 PacketVideo

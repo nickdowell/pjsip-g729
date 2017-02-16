@@ -68,21 +68,6 @@ void Lsp_Az(
   }
 }
 
-static inline Word32 mull(Word32 a, Word16 b)
-{
-  register Word32 ra = a;
-  register Word32 rb = b;
-  Word32 lo, hi;
-
-  __asm__("smull %0, %1, %2, %3     \n\t"
-          "mov   %0, %0,     LSR #16 \n\t"
-          "add   %1, %0, %1, LSL #16  \n\t"
-          : "=&r"(lo), "=&r"(hi)
-          : "r"(rb), "r"(ra));
-
-  return hi;
-}
-
 /*-----------------------------------------------------------*
  * procedure Get_lsp_pol:                                    *
  *           ~~~~~~~~~~~                                     *

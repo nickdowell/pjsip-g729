@@ -475,10 +475,9 @@ void agc(
  * Prototypes for auxiliary functions.                                      *
  *--------------------------------------------------------------------------*/
 
-#include <strings.h>
 #include <string.h>
 #define Copy(x,y,L)    memcpy((y), (x), (L)*sizeof(Word16))
-#define Set_zero(x, L) bzero((x), (L)*sizeof(Word16))
+#define Set_zero(x, L) memset((x), 1, (L)*sizeof(Word16))
 
 Word16 Random(void);
 
